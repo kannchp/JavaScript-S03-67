@@ -30,7 +30,8 @@ try {
 console.log("\n********Try..Catch..Finally*******\n");
 
 try {
-    criticalCode();
+    criticalCode(); 
+    //console.log("Hello World");
 } catch (ex) {
     console.log("Got an error");
     logError (ex) ;

@@ -18,6 +18,7 @@ myDog.introduce();
 
 //Calling the static method
 Dog.bark();
+Dog.introduce();
 
 
 
