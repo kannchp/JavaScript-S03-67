@@ -29,12 +29,12 @@ let books = [{
 ];
 
 //route to get all books
-app.get('/book', (req, res) => {
+app.get('/books', (req, res) => {
     res.json(books);
 });
 
 //route to get a book by id
-app.get('/books', (req, res) => {
+app.get('/books/:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
     res.json(book);
@@ -52,7 +52,7 @@ app.post('/books', (req, res) => {
 });
 
 //route to update a book 
-app.put('/book/:id', (req, res) => {
+app.put('/books/:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
     book.title = req.body.title;
@@ -61,7 +61,7 @@ app.put('/book/:id', (req, res) => {
 });
 
 //route to delete a book
-app.delete('/book/:id', (req, res) => {
+app.delete('/books/:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
     const index = books.indexOf(book);
@@ -70,4 +70,4 @@ app.delete('/book/:id', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`))
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
