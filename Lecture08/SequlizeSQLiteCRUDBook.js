@@ -4,7 +4,7 @@
 //Test with Postman
 
 const express = require('express');
-const Sequelize = require('sequlize');
+const Sequelize = require('sequelize');
 const app = express();
 
 //parse incoming requests
@@ -20,7 +20,7 @@ const sequelize = new Sequelize('database','username','password', {
 //define the Book model
 const Book = sequelize.define('book', {
     id: {
-        type: Sequelize.INIEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
