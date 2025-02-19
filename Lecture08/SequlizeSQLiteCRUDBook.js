@@ -35,7 +35,7 @@ const Book = sequelize.define('book', {
 });
 
 //create the books table if it doesn't exist
-Sequelize.sync();
+sequelize.sync();
 
 //route to get all books
 app.get('/books', (req, res) => {
