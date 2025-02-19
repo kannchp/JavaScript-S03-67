@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 //Base URL for the API
 //const base_url = "https://api.example.com";
-const base_url = "http://localhost:3000";
+const base_url = "http://localhost:4000";
 
 //Set the template engine
 app.set('view engine', 'ejs');
@@ -44,7 +44,7 @@ app.get("/create", (req, res) => {
 
 app.post("/create", async (req, res) => {
     try{
-        const data = {title: req.body.title, author: req.body.author };
+        const data = { title: req.body.title, author: req.body.author };
         await axios.post(base_url + '/books', data);
         res.redirect("/");
     }catch(err){
@@ -86,5 +86,5 @@ app.get("/delete/:id", async (req, res) => {
 });
 
 app.listen(5500, () => {
-    console.log('Server started on port 5500');
+    console.log(`Server started on port 5500`);
     });
